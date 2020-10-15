@@ -1,0 +1,168 @@
+{
+  "token": {
+    "$id": "#/properties/token",
+    "type": "string",
+    "title": "Token",
+    "description": "The bot's token (from the developer portal)"
+  },
+  "primaryServer": {
+    "$id": "#/properties/primaryServer",
+    "type": "string",
+    "title": "Server ID",
+    "description": "The numerical ID of the server",
+    "default": "",
+    "pattern": "^([0-9]+)$"
+  },
+  "maintainer": {
+    "$id": "#/properties/maintainer",
+    "type": "string",
+    "title": "Maintainer ID",
+    "description": "The numerical user ID of the technical maintainer",
+    "default": "",
+    "pattern": "^([0-9]+)$"
+  },
+  "moderators": {
+    "$id": "#/properties/moderators",
+    "type": "array",
+    "title": "Moderator Roles",
+    "description": "Names of moderator roles",
+    "default": null,
+    "items": {
+      "$id": "#/properties/moderators/items",
+      "type": "string",
+      "title": "Role",
+      "default": "Moderator"
+    }
+  },
+  "prefix": {
+    "$id": "#/properties/prefix",
+    "type": "string",
+    "title": "Command Prefix",
+    "description": "The character sequence to invoke a command",
+    "default": "!"
+  },
+  "commandOptions": {
+    "$id": "#/properties/commandOptions",
+    "type": "array",
+    "title": "Command Options",
+    "description": "Override command default options",
+    "default": null,
+    "items": {
+      "$id": "#/properties/commandOptions/items",
+      "type": "object",
+      "title": "Command",
+      "default": null,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/commandOptions/items/properties/name",
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the command",
+          "default": ""
+        },
+        "channel": {
+          "$id": "#/properties/commandOptions/items/properties/channel",
+          "type": "string",
+          "title": "Channel",
+          "description": "The channel to post messages/replies to"
+        },
+        "messages": {
+          "$id": "#/properties/commandOptions/items/properties/messages",
+          "type": "array",
+          "title": "Message Templates",
+          "description": "A list of templates for messages sent from this command.",
+          "items": {
+            "$id": "#/properties/commandOptions/items/properties/messages/items",
+            "type": "string"
+          }
+        },
+        "aliases": {
+          "$id": "#/properties/commandOptions/items/properties/aliases",
+          "type": "array",
+          "title": "Aliases",
+          "description": "A list of aliases that can be used to invoke the command",
+          "items": {
+            "$id": "#/properties/commandOptions/items/properties/aliases/items",
+            "type": "string"
+          }
+        },
+        "roles": {
+          "$id": "#/properties/commandOptions/items/properties/roles",
+          "type": "array",
+          "title": "Roles",
+          "description": "Roles (in addition to moderators/maintainer) allowed to run this command.",
+          "default": null,
+          "items": {
+            "$id": "#/properties/commandOptions/items/properties/roles/items",
+            "type": "string"
+          }
+        },
+        "limit": {
+          "$id": "#/properties/commandOptions/items/properties/limit",
+          "type": "boolean",
+          "title": "Limit roles",
+          "description": "Limit this command to certain roles",
+          "default": false
+        },
+        "enabled": {
+          "$id": "#/properties/commandOptions/items/properties/enabled",
+          "type": "boolean",
+          "title": "Enabled",
+          "description": "Enable command",
+          "default": true
+        }
+      }
+    }
+  },
+  "jobOptions": {
+    "$id": "#/properties/jobOptions",
+    "type": "array",
+    "title": "Job Options",
+    "description": "Override job default options",
+    "default": null,
+    "items": {
+      "$id": "#/properties/jobOptions/items",
+      "type": "object",
+      "title": "Job",
+      "default": null,
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "$id": "#/properties/jobOptions/items/properties/name",
+          "type": "string",
+          "title": "Name",
+          "description": "The name of the job",
+          "default": ""
+        },
+        "channel": {
+          "$id": "#/properties/jobOptions/items/properties/channel",
+          "type": "string",
+          "title": "Channel",
+          "description": "The channel to post messages to"
+        },
+        "messages": {
+          "$id": "#/properties/jobOptions/items/properties/messages",
+          "type": "array",
+          "title": "Message Templates",
+          "description": "A list of templates for messages sent from this job.",
+          "items": {
+            "$id": "#/properties/jobOptions/items/properties/messages/items",
+            "type": "string"
+          }
+        },
+        "enabled": {
+          "$id": "#/properties/jobOptions/items/properties/enabled",
+          "type": "boolean",
+          "title": "Enabled",
+          "description": "Enable job",
+          "default": true
+        }
+      }
+    }
+  }
+}

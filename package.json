@@ -1,0 +1,30 @@
+{
+  "name": "egg",
+  "version": "0.0.1",
+  "description": "egg friend",
+  "main": "index.js",
+  "dependencies": {
+    "@discordjs/uws": "^10.149.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "bufferutil": "^4.0.1",
+    "discord.js": "11.6.4",
+    "ejs": "^3.1.2",
+    "node-opus": "^0.3.3",
+    "node-schedule": "^1.3.2",
+    "pg": "^8.0.3",
+    "pg-promise": "^10.5.2",
+    "ref": "github:lxe/ref#node-12",
+    "yargs-parser": "^18.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "web": "node ./web/bin/www"
+  },
+  "author": "knot",
+  "license": "ISC",
+  "resolutions": {
+    "ref": "github:lxe/ref#node-12"
+  }
+}

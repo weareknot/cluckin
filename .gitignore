@@ -1,0 +1,16 @@
+.idea/
+node_modules/
+
+backups/
+
+config.json
+
+docker-compose.yml
+
+Dockerfile
+
+yarn-error.log
+
+build/
+
+yarn.lock
