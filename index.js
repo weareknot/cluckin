@@ -52,14 +52,14 @@ fs.readdirSync(monitorRoot)
 
 
 client.on('error', (e) => {
-    let botChannel = utils.getChannel(client, 'bot-log');
+    let botChannel = utils.getChannel(client, config.botChannel);
     botChannel.send(`<@${config.maintainer}>, error: ${e.message}.`);
     console.error(e);
 });
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    let botChannel = utils.getChannel(client, 'bot-log')
+    let botChannel = utils.getChannel(client, config.botChannel)
     botChannel.send(`<@${config.maintainer}>, I've restarted myself again because I am a silly chicken.`)
 
     client.user.setActivity(`${config.prefix}help`, {'type': 'PLAYING'})

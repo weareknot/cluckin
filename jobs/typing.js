@@ -13,7 +13,7 @@ class KeepAlive extends Job {
     }
 
     runOnce(client) {
-        let channel = utils.getChannel(client, 'bot-log');
+        let channel = utils.getChannel(client, config.botChannel);
         channel.startTyping();
         setTimeout(() => {channel.stopTyping()}, 1000);
     };

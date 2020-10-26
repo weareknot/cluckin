@@ -15,12 +15,14 @@ class BirthdaysToday extends Job {
     }
 
     runOnce(client, user, name) {
-        let channel = utils.getChannel(client, this.channel, user, null);
-        let randomMsg = this.config.messages[Math.floor(
-            Math.random() * this.config.messages.length)];
-        let renderedMsg = ejs.render(randomMsg,
-                                     {name: name, user: user});
-        channel.send(renderedMsg);
+        if (utils.isUser(client, user)) {
+            let channel = utils.getChannel(client, this.channel, user, null);
+            let randomMsg = this.config.messages[Math.floor(
+                Math.random() * this.config.messages.length)];
+            let renderedMsg = ejs.render(randomMsg,
+                {name: name, user: user});
+            channel.send(renderedMsg);
+        }
     };
 
     run(client) {

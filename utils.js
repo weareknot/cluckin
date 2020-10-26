@@ -16,6 +16,14 @@ function getChannel(client, name, ogAuthor, ogChannel) {
     return channel
 }
 
+function isUser(client, user) {
+    let server = client.guilds.find((c) => {
+        return c.id === config.primaryServer
+    });
+    let serverUser = server.member(user);
+    return serverUser !== null;
+}
+
 function isMod(client, user) {
     let server = client.guilds.find((c) => {
         return c.id === config.primaryServer
@@ -109,5 +117,6 @@ module.exports = {
     isInt: isInt,
     displayTrigger: displayTrigger,
     isModerator: isMod,
-    confirm: confirm
+    confirm: confirm,
+    isUser: isUser,
 };
