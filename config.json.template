@@ -1,0 +1,124 @@
+{
+  "name": "Cluckin",
+  "token": "BOT-TOKEN",
+  "primaryServer": "SERVER-ID",
+  "maintainer": "MAINTAINER-USER-ID",
+  "moderators": [
+    "Names",
+    "Of",
+    "Admin",
+    "Roles"
+  ],
+  "prefix": ">",
+  "commandOptions": {
+    "bday-add": {
+      "channel": "@this",
+      "messages": [
+        ""
+      ],
+      "aliases": [
+        "bday-set"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "bday-list": {
+      "channel": "@dm",
+      "aliases": [
+          "bdaylist"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "bday-users": {
+      "channel": "@dm",
+      "messages": [
+        "these are the birthdays"
+      ],
+      "aliases": [],
+      "roles": [
+        "admin"
+      ],
+      "limit": true,
+      "enabled": true
+    },
+    "bday-rm": {
+      "channel": "@this",
+      "aliases": [
+        "bday-unset",
+        "bday-remove"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "help": {
+      "channel": "@this",
+      "aliases": [
+        "halp",
+        "h"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "msgstaff": {
+      "channel": "channel-to-send-staff-messages-to",
+      "messages": [],
+      "aliases": [],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "tw-add": {
+      "channel": "@dm",
+      "messages": [],
+      "aliases": [
+        "trigger-add"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "tw-list": {
+      "channel": "@dm",
+      "messages": [],
+      "aliases": [
+        "trigger-list"
+      ],
+      "roles": [],
+      "limit": false,
+      "enabled": true
+    },
+    "tw-rm": {
+      "channel": "@dm",
+      "messages": [],
+      "aliases": [
+        "trigger-remove"
+      ],
+      "roles": [
+        "admin"
+      ],
+      "limit": true,
+      "enabled": true
+    }
+  },
+  "jobOptions": {
+    "birthdaysToday": {
+      "channel": "birthdays",
+      "messages": [
+        "It's <%= name %>'s birthday today! <%- user %>"
+      ]
+    }
+  },
+  "monitorOptions": {
+    "logDeleted": {
+      "channel": "log-channel"
+    },
+    "logEdited": {
+      "channel": "log-channel"
+    }
+  }
+}
