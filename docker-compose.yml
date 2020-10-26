@@ -1,0 +1,27 @@
+version: '2'
+services:
+  node:
+    build: .
+    depends_on:
+    - db
+    volumes:
+    - ./:/usr/app
+    ports:
+    - "8060:8080"
+    restart: always
+    command: 'npm start'
+    environment:
+      PORT: 8080
+      NODE_ENV: "${NODE_ENV}"
+      PGUSER: "${DBUSER}"
+      PGPASSWORD: "${DBPASS}"
+      PGDATABASE: "${DBNAME}"
+      PGHOST: db
+      PGPORT: 5432
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "${DBUSER}"
+      POSTGRES_PASSWORD: "${DBPASS}"
+      POSTGRES_DB: "${DBNAME}"
